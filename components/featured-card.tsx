@@ -46,7 +46,7 @@ export function FeaturedCard({ article }: FeaturedCardProps) {
             </h3>
           </ViewTransition>
         </Link>
-        <div className="mt-2 flex items-center gap-2 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+        <div className="mt-2 flex items-center gap-2 font-sans text-[11px] font-medium uppercase tracking-[0.55px] text-muted-foreground">
           <span>{article.date}</span>
           <span className="text-border">|</span>
           <Link

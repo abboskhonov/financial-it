@@ -22,7 +22,7 @@ export default function HomePage() {
     <>
       <Navbar />
       <DirectionalTransition>
-        <main className="mx-auto max-w-[1200px] px-4 sm:px-6 py-8 pt-[110px] md:pt-[130px]">
+        <main className="mx-auto max-w-[1200px] px-5 sm:px-6 py-8 pt-[110px] md:pt-[130px]">
           {/* 3-column layout */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6">
             {/* Left column — featured cards */}

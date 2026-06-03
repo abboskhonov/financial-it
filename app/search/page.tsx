@@ -26,9 +26,8 @@ function SearchResults({ query }: { query: string }) {
         <article key={article.id} className="group border-b border-border pb-6">
           <Link
             href={`/article/${article.slug}`}
-            onClick={() => {
-              // Close search before navigating
-            }}
+            transitionTypes={["nav-forward"]}
+            className="block"
           >
             <h3 className="font-heading text-lg font-semibold leading-snug tracking-tight group-hover:text-muted-foreground transition-colors line-clamp-2">
               {article.title}

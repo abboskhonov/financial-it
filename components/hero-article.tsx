@@ -47,10 +47,10 @@ export function HeroArticle({ article }: HeroArticleProps) {
             </h2>
           </ViewTransition>
         </Link>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-xl mx-auto">
+        <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground max-w-xl mx-auto">
           {article.excerpt}
         </p>
-        <div className="mt-3 flex items-center justify-center gap-2 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+        <div className="mt-3 flex items-center justify-center gap-2 font-sans text-[11px] font-medium uppercase tracking-[0.55px] text-muted-foreground">
           <span>{article.date}</span>
           <span className="text-border">|</span>
           <span>By {article.author}</span>

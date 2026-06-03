@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { SITE_NAME } from "@/lib/config";
 import {
   IconMenu2,
   IconSearch,
@@ -96,7 +97,7 @@ export function Navbar() {
               <DrawerContent className="inset-y-0 left-0 w-full max-w-sm rounded-r-xl border-r border-border bg-background shadow-xl p-0 overflow-y-auto">
                 <DrawerHeader className="flex items-center justify-between px-4 py-3 border-b border-border">
                   <DrawerTitle className="font-heading text-xl italic">
-                    The Hawaii
+                    {SITE_NAME}
                   </DrawerTitle>
                   <DrawerClose asChild>
                     <button
@@ -110,7 +111,7 @@ export function Navbar() {
 
                 <div className="px-4 py-4">
                   {/* Nav links */}
-                  <h3 className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+                  <h3 className="font-sans text-[10px] font-semibold uppercase tracking-[1.4px] text-muted-foreground mb-3">
                     Sections
                   </h3>
                   <ul className="flex flex-col gap-0 mb-6">
@@ -119,7 +120,7 @@ export function Navbar() {
                         <DrawerClose asChild>
                           <Link
                             href={link.href}
-                            className="block py-3 text-base font-medium hover:text-muted-foreground transition-colors"
+                            className="block py-3 font-sans text-base font-medium hover:text-muted-foreground transition-colors"
                           >
                             {link.label}
                           </Link>
@@ -129,7 +130,7 @@ export function Navbar() {
                   </ul>
 
                   {/* Socials */}
-                  <h3 className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+                  <h3 className="font-sans text-[10px] font-semibold uppercase tracking-[1.4px] text-muted-foreground mb-3">
                     Follow Us
                   </h3>
                   <div className="flex items-center gap-3 text-muted-foreground">
@@ -158,16 +159,16 @@ export function Navbar() {
             href="/"
             className="font-heading text-2xl sm:text-3xl italic tracking-tight"
           >
-            The Hawaii
+            {SITE_NAME}
           </Link>
 
           {/* Right: CTA + theme + socials */}
           <div className="flex items-center gap-2 sm:gap-3">
             <a
               href="#"
-              className="hidden sm:inline-flex items-center rounded bg-[#c41e3a] px-3 py-1 text-xs font-medium text-white hover:bg-[#a01830] transition-colors"
+              className="hidden sm:inline-flex items-center bg-accent px-3 py-1.5 text-[11px] font-sans font-semibold uppercase tracking-[0.55px] text-accent-foreground hover:opacity-90 transition-opacity"
             >
-              Buy now
+              Subscribe
             </a>
             <button
               aria-label="Toggle theme"
@@ -198,7 +199,7 @@ export function Navbar() {
         }`}
       >
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-          <ul className="flex items-center justify-center gap-6 py-2.5 text-sm font-medium">
+          <ul className="flex items-center justify-center gap-5 py-2.5 font-sans text-[11px] font-semibold uppercase tracking-[1.4px]">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link

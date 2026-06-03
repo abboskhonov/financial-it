@@ -40,6 +40,20 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <article className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6">
             {/* Main article content */}
             <div className="md:col-span-8">
+              {/* Back button */}
+              <div className="mb-3">
+                <Link
+                  href="/"
+                  transitionTypes={["nav-back"]}
+                  className="inline-flex items-center gap-1 text-xs font-medium uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                  </svg>
+                  Back
+                </Link>
+              </div>
+
               {/* Breadcrumb */}
               <div className="mb-4 text-xs font-medium uppercase tracking-wider text-muted-foreground">
                 <Link

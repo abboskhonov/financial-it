@@ -25,7 +25,7 @@ export function SideArticle({ article }: SideArticleProps) {
             </h4>
           </ViewTransition>
         </Link>
-        <div className="mt-1.5 flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+        <div className="mt-1.5 flex items-center gap-1.5 font-sans text-[10px] font-medium uppercase tracking-[0.55px] text-muted-foreground">
           <span>By {article.author}</span>
         </div>
       </div>

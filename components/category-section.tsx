@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ViewTransition } from "react";
 import { IconArrowRight } from "@tabler/icons-react";
 import type { Article } from "@/lib/data/articles";
 
@@ -17,12 +16,12 @@ export function CategorySection({ title, articles, categorySlug }: CategorySecti
     <section className="mt-12">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <h2 className="font-heading text-sm font-semibold uppercase tracking-widest">
+        <h2 className="font-heading text-sm font-semibold uppercase tracking-[0.55px]">
           {title}
         </h2>
         <Link
           href={`/${categorySlug}`}
-          className="flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
+          className="flex items-center gap-1 font-sans text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
         >
           View all
           <IconArrowRight size={14} stroke={1.5} />
@@ -38,41 +37,29 @@ export function CategorySection({ title, articles, categorySlug }: CategorySecti
               transitionTypes={["nav-forward"]}
               className="block"
             >
-              <ViewTransition
-                name={`article-image-${article.slug}`}
-                share="morph"
-                default="none"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                </div>
-              </ViewTransition>
+              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
             </Link>
             <div className="mt-3">
               <Link
                 href={`/article/${article.slug}`}
                 transitionTypes={["nav-forward"]}
               >
-                <ViewTransition
-                  name={`article-title-${article.slug}`}
-                  share="text-morph"
-                  default="none"
-                >
-                  <h3 className="font-heading text-sm font-semibold leading-snug tracking-tight group-hover:text-muted-foreground transition-colors line-clamp-2">
-                    {article.title}
-                  </h3>
-                </ViewTransition>
+                <h3 className="font-heading text-sm font-semibold leading-snug tracking-tight group-hover:text-muted-foreground transition-colors line-clamp-2">
+                  {article.title}
+                </h3>
               </Link>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground line-clamp-3">
+              <p className="mt-2 font-body text-xs leading-relaxed text-muted-foreground line-clamp-3">
                 {article.excerpt}
               </p>
-              <div className="mt-2 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+              <div className="mt-2 font-sans text-[10px] font-medium uppercase tracking-[0.55px] text-muted-foreground">
                 {article.date}
               </div>
             </div>
