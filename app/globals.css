@@ -218,6 +218,30 @@
     var(--duration-move) ease-in-out both slide;
 }
 
+/* Shared element morph */
+::view-transition-group(.morph) {
+  animation-duration: var(--duration-move);
+}
+::view-transition-image-pair(.morph) {
+  animation-name: via-blur;
+}
+@keyframes via-blur {
+  30% { filter: blur(3px); }
+}
+
+/* Text morph */
+::view-transition-group(.text-morph) {
+  animation-duration: var(--duration-move);
+}
+::view-transition-old(.text-morph) {
+  display: none;
+}
+::view-transition-new(.text-morph) {
+  animation: none;
+  object-fit: none;
+  object-position: left top;
+}
+
 /* Persistent elements */
 ::view-transition-group(persistent-nav) {
   animation: none;
@@ -227,6 +251,16 @@
   display: none;
 }
 ::view-transition-new(persistent-nav) {
+  animation: none;
+}
+::view-transition-group(persistent-footer) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(persistent-footer) {
+  display: none;
+}
+::view-transition-new(persistent-footer) {
   animation: none;
 }
 
